@@ -34,14 +34,7 @@ public class Skill_Water : MonoBehaviour
         _skill230 = new Skill230(SkillReferenceObject.L1_2[3]);
         _skill240 = new Skill240(SkillReferenceObject.L1_2[4]);
         _skill250 = new Skill250(SkillReferenceObject.L1_2[5]);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            LevelUp(_skill200);
-        }
+        LevelUp(_skill200);
     }
 
     private static bool FindClosestEnemy(CircleCollider2D collider, Vector3 BasePosition, out GameObject ClosestEnemy)

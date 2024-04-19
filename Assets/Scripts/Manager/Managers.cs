@@ -28,7 +28,7 @@ public class Managers : MonoBehaviour
     [Header("#Player Info")]
     public float health;
     public float maxHealth = 100;
-    public int level = 1;
+    public int level;
     public int kill;
     public int exp;
     public int[] nextExp = { 3, 5, 10, 30, 60, 100, 150, 210, 180, 360, 450, 600, 700, 800, 1000, 1200 };

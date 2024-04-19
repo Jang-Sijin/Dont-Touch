@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/InGame.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainScene.unity
+    guid: 851b189c7ab046d4d86ce13a5c591ef9
   - enabled: 1
-    path: Assets/Scenes/InfiniteMap.unity
-    guid: 3e270181fafa60b47bbca49e2d29af56
-  - enabled: 1
-    path: Assets/Scenes/InfiniteMap2.unity
-    guid: 18d3a0cf21489cb438c31bad48dd7311
+    path: Assets/Scenes/InfiniteMap2 2.unity
+    guid: c4451bcb372953d4893bfd142897dd69
   m_configObjects: {}
