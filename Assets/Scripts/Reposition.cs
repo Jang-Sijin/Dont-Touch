@@ -18,7 +18,7 @@ public class Reposition : MonoBehaviour
             return;
         
         // 플레이어 위치
-        Vector3 playerPos = Managers.instance._player.transform.position;
+        Vector3 playerPos = Manager.instance._player.transform.position;
         // 타입맵 위치
         Vector3 myPos = transform.position;
 

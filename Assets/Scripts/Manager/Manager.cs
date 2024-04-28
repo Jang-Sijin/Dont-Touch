@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Managers : MonoBehaviour
+public class Manager : MonoBehaviour
 {
-    private static Managers Instance;
-    public static Managers instance
+    private static Manager Instance;
+    public static Manager instance
     {
         get
         {
             if (Instance == null)
             {
-                Instance = FindObjectOfType<Managers>();
+                Instance = FindObjectOfType<Manager>();
             }
 
             return Instance;

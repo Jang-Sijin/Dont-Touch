@@ -10,7 +10,7 @@ public class Exprience : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Managers.instance.GetExp(exp);
+            Manager.instance.GetExp(exp);
             gameObject.SetActive(false);
         }
     }

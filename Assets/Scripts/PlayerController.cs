@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // 플레이어가 생존 상태가 아닐 때
-        if (!Managers.instance.isLive) 
+        if (!Manager.instance.isLive) 
             return;
 
         // 플레이어가 생존 상태일 때, 이동관련 키입력 처리
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // 플레이어가 생존 상태가 아닐 때
-        if (!Managers.instance.isLive) 
+        if (!Manager.instance.isLive) 
             return;
         
         // 플레이어 이동 처리
@@ -47,11 +47,11 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         // 플레이어가 생존 상태가 아닐 때
-        if (!Managers.instance.isLive)
+        if (!Manager.instance.isLive)
             return;
 
         // 플레이어의 체력이 0보다 작을 때
-        if (Managers.instance.health < 0)
+        if (Manager.instance.health < 0)
             return;
 
         // 플레이어가 이동중일 떄 처리 내용
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         // 플레이어가 생존 상태가 아닐 때
-        if (!Managers.instance.isLive) 
+        if (!Manager.instance.isLive) 
             return;
 
         // 플레이어가 적군한테 초당 대미지를 받는다.
@@ -84,11 +84,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Managers.instance.health -= Time.deltaTime * collision.gameObject.GetComponent<EnemyController>().enemyData.damage;
+            Manager.instance.health -= Time.deltaTime * collision.gameObject.GetComponent<EnemyController>().enemyData.damage;
         }
 
         // 플레이어의 체력이 0보다 작을 때(플레이어가 죽었을 경우)
-        if (Managers.instance.health < 0)
+        if (Manager.instance.health < 0)
         {
             // 모든 오브젝트 Active False
             for (int i = 2; i < transform.childCount; i++)
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             // _anim.Play("Dead");
             
             // 게임오버 처리
-            Managers.instance.GameOver();
+            Manager.instance.GameOver();
         }
 
     }

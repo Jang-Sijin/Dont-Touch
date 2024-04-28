@@ -20,22 +20,22 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (!Managers.instance.isLive) 
+        if (!Manager.instance.isLive) 
             return;
 
         _timer += Time.deltaTime;
 
-        if (Managers.instance._gameTime > spawnData[spawnLevel].waveTime * 60)
+        if (Manager.instance._gameTime > spawnData[spawnLevel].waveTime * 60)
         {
             spawnLevel++;
         }
 
-        if (Managers.instance._gameTime > waveData[waveLevel].waveTime * 60f)
+        if (Manager.instance._gameTime > waveData[waveLevel].waveTime * 60f)
         {
             SpawnWave();
         }
 
-        if (Managers.instance._gameTime > bossData[bossLevel].spawnTime * 60f)
+        if (Manager.instance._gameTime > bossData[bossLevel].spawnTime * 60f)
         {
             GameObject boss = Instantiate(bossData[bossLevel].monster);
             boss.transform.position = _spawnPoint[UnityEngine.Random.Range(1, _spawnPoint.Length)].position;
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        GameObject enemy = Managers.instance.Pool.Get(UnityEngine.Random.Range(spawnData[spawnLevel].firstIndex, spawnData[spawnLevel].lastIndex + 1));
+        GameObject enemy = Manager.instance.Pool.Get(UnityEngine.Random.Range(spawnData[spawnLevel].firstIndex, spawnData[spawnLevel].lastIndex + 1));
         enemy.transform.position = _spawnPoint[UnityEngine.Random.Range(1, _spawnPoint.Length)].position;
         enemy.GetComponent<EnemyController>().Init();
     }
@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
         {
             for (int j = 0; j < waveData[waveLevel].monsterCounts[i]; j++)
             {
-                GameObject enemy = Managers.instance.Pool.Get(waveData[waveLevel].monsterIndexes[i]);
+                GameObject enemy = Manager.instance.Pool.Get(waveData[waveLevel].monsterIndexes[i]);
                 enemy.transform.position = randPos;
                 enemy.GetComponent<EnemyController>().Init();
             }

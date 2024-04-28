@@ -29,22 +29,22 @@ public class HUD : MonoBehaviour
         switch (type)
         {
             case InfoType.Exp:
-                float curExp = Managers.instance.exp;
-                float maxExp = Managers.instance.nextExp[Mathf.Min(Managers.instance.level, Managers.instance.nextExp.Length - 1)];
+                float curExp = Manager.instance.exp;
+                float maxExp = Manager.instance.nextExp[Mathf.Min(Manager.instance.level, Manager.instance.nextExp.Length - 1)];
                 _mySlider.value = curExp / maxExp;
                 break;
             case InfoType.Level:
-                _myText.text = string.Format("Lv.{0:F0}", Managers.instance.level);
+                _myText.text = string.Format("Lv.{0:F0}", Manager.instance.level);
                 break;
             case InfoType.Time:
-                float remainTime = Managers.instance._gameTime;
+                float remainTime = Manager.instance._gameTime;
                 int min = Mathf.FloorToInt(remainTime / 60);
                 int sec = Mathf.FloorToInt(remainTime % 60);
                 _myText.text = string.Format("{0:D2}:{1:D2}", min, sec);
                 break;
             case InfoType.Health:
-                float curHealth = Managers.instance.health;
-                float maxHealth = Managers.instance.maxHealth;
+                float curHealth = Manager.instance.health;
+                float maxHealth = Manager.instance.maxHealth;
                 _mySlider.value = curHealth / maxHealth;
                 break;
         }

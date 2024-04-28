@@ -24,7 +24,7 @@ public class Skill_Roomba : MonoBehaviour
 
     private void Start()
     {
-        player = Managers.instance._player;
+        player = Manager.instance._player;
         _skill500 = new Skill500(SkillReferenceObject.L1_5[0]);
         _skill510 = new Skill510(SkillReferenceObject.L1_5[1]);
         _skill520 = new Skill520(SkillReferenceObject.L1_5[2]);

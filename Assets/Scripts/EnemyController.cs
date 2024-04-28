@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
         // if (!_isLive || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             //return;
         
-        if (!Managers.instance.isLive) return;
+        if (!Manager.instance.isLive) return;
 
         // 플레이어와의 거리 = 타겟(플레이어) 위치 - 적군 위치
         Vector2 dirVec = Target.position - _rigidbody2D.position;
@@ -51,14 +51,14 @@ public class EnemyController : MonoBehaviour
     void LateUpdate()
     {
         if (!_isLive) return;
-        if (!Managers.instance.isLive) return;
+        if (!Manager.instance.isLive) return;
     
         _spriteRenderer.flipX = Target.position.x < _rigidbody2D.position.x;
     }
 
     private void OnEnable()
     {
-        Target = Managers.instance._player.GetComponent<Rigidbody2D>();
+        Target = Manager.instance._player.GetComponent<Rigidbody2D>();
         _isLive = true;
         _collider2D.enabled = true;
         _rigidbody2D.simulated = true;
@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator KnockBack()
     {
         yield return _wait;
-        Vector3 playerPos = Managers.instance._player.transform.position;
+        Vector3 playerPos = Manager.instance._player.transform.position;
         Vector3 dirVec = transform.position - playerPos;
         _rigidbody2D.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
 
@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
 
     void Dead()
     {
-        GameObject exp = Managers.instance.Pool.Get(7);
+        GameObject exp = Manager.instance.Pool.Get(7);
         exp.transform.position = transform.localPosition;
         gameObject.SetActive(false);
     }
