@@ -18,13 +18,7 @@ public class BaseScene : MonoBehaviour
         if (_init)
             return false;
 
-        _init = true;
-
-        GameObject go = GameObject.Find("EventSystem");
-        if(go == null)
-        {
-
-        }
+        _init = true;        
 
         return true;
     }
