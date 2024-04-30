@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 1319799133}
   - component: {fileID: 1319799135}
   m_Layer: 5
-  m_Name: SettingButton
+  m_Name: optionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 2019823350}
   - component: {fileID: 2019823349}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TitleUICanvasManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
