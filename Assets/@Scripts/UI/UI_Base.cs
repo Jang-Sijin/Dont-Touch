@@ -14,7 +14,7 @@ public abstract class UI_Base : MonoBehaviour
         if (_init)
             return false;
 
-        // 메인 매니저 데이터 셋팅 진행
+        // 메인 매니저 데이터 셋팅 진행 > 데이터 테이블(파싱) 없는 경우 제외
         // Manager.Init();
 
         _init = true;

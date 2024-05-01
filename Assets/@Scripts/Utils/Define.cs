@@ -16,4 +16,11 @@ public class Define
         OnClick,    // 클릭 시, 즉시 발동
         OnPress     // 클릭 후, 발동
     }
+
+    public enum Sound
+    {
+        Bgm,
+        Effect,
+        Max
+    }
 }

@@ -167,7 +167,7 @@ public class Skill_Broomstick : MonoBehaviour
                 skillObject.transform.position = player.transform.position;
                 skillObject.transform.SetParent(null);
                 skillObject.SetActive(true);
-                SoundManager.Instance.PlaySFXSound("Broomstick_Attack");
+                SoundManager_Old.Instance.PlaySFXSound("Broomstick_Attack");
                 SCR.Damage = 0f;
                 yield return new WaitForSeconds(0.5f);
                 SCR.Damage = this.damage;
@@ -272,7 +272,7 @@ public class Skill_Broomstick : MonoBehaviour
             while (true)
             {
                 skillObject.SetActive(true);
-                SoundManager.Instance.PlaySFXSound("Broomstick_Attack");
+                SoundManager_Old.Instance.PlaySFXSound("Broomstick_Attack");
                 yield return new WaitForSeconds(0.4f);
                 skillObject.SetActive(false);
                 yield return new WaitForSeconds(coolDown);

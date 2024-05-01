@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager_Old : MonoBehaviour
 {
-    private static SoundManager instance;
-    public static SoundManager Instance
+    private static SoundManager_Old instance;
+    public static SoundManager_Old Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<SoundManager>();
+                instance = FindObjectOfType<SoundManager_Old>();
             }
 
             return instance;

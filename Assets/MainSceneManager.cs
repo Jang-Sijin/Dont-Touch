@@ -7,17 +7,17 @@ public class MainSceneManager : MonoBehaviour
 {
     public void FirstButton()
     {
-        SoundManager.Instance.PlaySFXSound("Button");
+        SoundManager_Old.Instance.PlaySFXSound("Button");
         SceneManager.LoadScene(1);
     }
     public void SecondButton()
     {
-        SoundManager.Instance.PlaySFXSound("Button");
+        SoundManager_Old.Instance.PlaySFXSound("Button");
     }
 
     public void ThirdButton()
     {
-        SoundManager.Instance.PlaySFXSound("Button");
+        SoundManager_Old.Instance.PlaySFXSound("Button");
         Application.Quit();
     }
 }
